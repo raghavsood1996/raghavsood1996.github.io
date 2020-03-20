@@ -42,7 +42,7 @@ navbar-col: "#050505"
 navbar-text-col: "#58D3F7"
 navbar-children-col: "#F5F5F5"
 page-col: "#050505" #fixed
-text-col: "#FFFFFF"
+page-text-col: "#FFFFFF"
 link-col: "#FF0000"
 hover-col: "#FF0000"
 footer-col: "#F5F5F5"
