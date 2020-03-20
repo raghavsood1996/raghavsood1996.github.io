@@ -44,7 +44,7 @@ navbar-children-col: "#F5F5F5"
 page-col: "#050505" #fixed
 page-text-col: "#FFFFFF"
 link-col: "#FF0000"
-hover-col: "#FFFFFF"
+hover-col: "#00FFFF"
 footer-col: "#F5F5F5"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
