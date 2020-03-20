@@ -39,7 +39,7 @@ title-img: /img/intro.jpg
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
 navbar-col: "#050505"
-navbar-text-col: "#OCEA5C "
+navbar-text-col: "#58D3F7"
 navbar-children-col: "#F5F5F5"
 page-col: "#050505" #fixed
 text-col: "#FFFFFF"
