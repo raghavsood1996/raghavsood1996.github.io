@@ -2,7 +2,7 @@
 layout: post
 title: Learning to Use Adaptive Motion Primitives in Search Based Planning for Navigation
 subtitle: IROS 2020
-gh-repo: raghavsood1996/learn_adaptive_primitives
+gh-repo: raghavsood1996/learn_adaptive_primitves
 gh-badge: [star, fork, follow]
 tags: [test]
 comments: true
