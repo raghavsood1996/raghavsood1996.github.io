@@ -2,7 +2,7 @@
 layout: post
 title: Motion Planning for Localization in Non-Gaussian Belief Spaces
 subtitle: Project for 16-899
-bigimg: /img/path.jpg
+bigimg: /img/16-899.png
 tags: [SLAM, Motion Planning, Research]
 ---
 
