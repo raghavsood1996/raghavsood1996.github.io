@@ -1,5 +1,5 @@
 .centered-thing {
-    float: none;
+    
     display: block;
-    margin: auto;   
+    margin: 0 auto;   
 }
