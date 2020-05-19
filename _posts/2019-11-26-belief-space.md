@@ -13,7 +13,7 @@ This work presents a method for motion planning under uncertainity to deal with 
 <br/>
 <br/>
 
-<link rel="stylesheet" type="text/css" media="all" href="../css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
 
 <div class="center-block">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/oYWcL3pDUCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
