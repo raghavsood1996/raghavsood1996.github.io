@@ -13,17 +13,8 @@ This work presents a method for motion planning under uncertainity to deal with 
 <br/>
 <br/>
 
+<link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
 
-<style type="video_container" rel="stylesheet">
-* { max-width: 560px;
-    max-height: 315px;
-    margin-right: auto;
-    margin-left: auto;
- }
-</style>
-
-
-<figure class="video_container">
+<div class="your-centered-vid">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/oYWcL3pDUCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</figure>
-
+</div>
