@@ -1,6 +1,6 @@
 .centered-thing {
     
     margin: auto;
-    margin-left: 50%;
+    left: 50%;
     transform: translate(-50%); 
 }
