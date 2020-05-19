@@ -9,5 +9,5 @@ tags: [SLAM, Motion Planning, Research]
 This work presents a method for motion planning under uncertainity to deal with situations where ambiguous data associations result in a multi-modal hypothesis on the robot state. We present an approach, to plan actions that sequentially disambiguate a multimodal belief to achieve a unimodal belief in finite amount of time. Experimental results are provided using a simulation of a non holonomic ground robot operating in an artificial-maze like environment. We demonstrate two experiments wherein the robot is given no a priori information about its initial pose and planner is tasked with localizing the robot.
 
 <figure class="video_container">
-  <iframe src="https://www.youtube.com/watch?v=oYWcL3pDUCc&feature=youtu.be" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/oYWcL3pDUCc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
