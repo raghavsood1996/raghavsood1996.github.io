@@ -1,7 +1,6 @@
 .centered-thing {
     
-    position: absolute;
-    margin: auto;
-    left: 50%;
-    transform: translate(-50%); 
+    width: 560px;
+    margin: 0 auto;
+   
 }
