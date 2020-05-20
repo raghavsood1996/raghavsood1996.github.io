@@ -42,7 +42,7 @@ avatar: "/img/avatar-me.jpg"
 navbar-col: "#050505"
 navbar-text-col: "#C9002C" # "#FF0000"
 navbar-children-col: "#F5F5F5"
-page-col: "#050505" #fixed
+page-col: "#2F323A" #fixed
 page-text-col: "#FFFFFF"
 link-col: "#C9002C" #"#FF0000"
 hover-col: "#00FFFF"
