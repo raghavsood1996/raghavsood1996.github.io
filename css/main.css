@@ -597,9 +597,9 @@ footer .theme-by {
   font-weight: 800;
   letter-spacing: 1px;
   padding: 10px 5px;
-  background-color: #FFF;
+  background-color: #F4E76E;
   border-radius: 0;
-  color: #F4E76E;
+  color: #2F323A;
 }
 @media only screen and (min-width: 768px) {
   .pager li a {
