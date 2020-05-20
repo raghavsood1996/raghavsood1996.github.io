@@ -72,7 +72,7 @@ hr.small {
   background-color: {{ site.hover-col }};
 }
 ::selection {
-  color: black;
+  color: white;
   text-shadow: none;
   background-color: {{ site.hover-col }};
 }
@@ -599,7 +599,7 @@ footer .theme-by {
   padding: 10px 5px;
   background-color: #FFF;
   border-radius: 0;
-  color: #FFFFFF;
+  color: #F4E76E;
 }
 @media only screen and (min-width: 768px) {
   .pager li a {
