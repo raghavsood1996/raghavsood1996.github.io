@@ -22,7 +22,7 @@ description: Here are some interesting facts about me
 navbar-links:
   About Me: "aboutme"
   Research: "research"
-  Resume: "resume"
+  Resume: "http://raghavsood1996.github.io/Raghav_CMU_updated.pdf"
   # Resources:
   #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
   #   - Learn markdown: "http://www.markdowntutorial.com/"
