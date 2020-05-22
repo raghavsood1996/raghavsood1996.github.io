@@ -11,7 +11,6 @@ This work presents a method for motion planning under uncertainity to deal with 
 
 <br/>
 <br/>
-<br/>
 
 <link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
 

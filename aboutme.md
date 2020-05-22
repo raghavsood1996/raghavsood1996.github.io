@@ -1,7 +1,8 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Who I am and What do I do
+bigimg: "img/brooklyn.jpeg"
 ---
 
-My name is Raghav Sood and I like to have fun. Well who doesn't?
+I am currently a Research Associate at Search Based planning Laboratory at Carnegie Mellon University.
