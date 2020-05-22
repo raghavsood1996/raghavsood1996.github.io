@@ -15,7 +15,7 @@ description: Here are some interesting facts about me
 
 # baseurl should be an empty string
 #baseurl: ""
-
+cover-img:"/img/16-899.png"
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
