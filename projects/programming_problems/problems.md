@@ -61,7 +61,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
 ## **DFS GRAPH**
 
-```C++
+```c++
     #include <iostream>
     #include <list>
     #include<memory>
@@ -137,7 +137,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
 ## **BFS GRAPH**
 
-```C++
+```c++
 #include <iostream>
 #include <list>
 #include<memory>
