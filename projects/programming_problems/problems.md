@@ -5,6 +5,7 @@ subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
 ---
 
+# PROGRAMMING PROBLEMS
 
 1. ## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
@@ -23,50 +24,128 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 **Example 2:**
 **Input:** $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 3 **Output:** -1
 
-{% highlight C++ linenos %}
-class Solution {
-public:
-    int search(vector<int>& nums, int target) {
-        int start = 0, end = nums.size()-1;
-        while(start <= end){
+```C++
+    class Solution {
+    public:
+        int search(vector<int>& nums, int target) {
+            int start = 0, end = nums.size()-1;
+            while(start <= end){
+                cout<<start<<" "<<end<<endl;
+                int mid = (start + end)/2;
+                if(target == nums[mid]){
+                    return mid;
+                }
+                else if(nums[mid] >= nums[start]){ //unrotated part of the array
+                    if(target >= nums[start] && target < nums[mid]) 
+                        end = mid-1;
+                    else
+                        start = mid+1;
+                }
+                else{ //rotated part of the array
+                    if(target <= nums[end] && target > nums[mid])
+                        start = mid+1;
+                    else
+                        end = mid-1;
+                }
+            }
             cout<<start<<" "<<end<<endl;
-            int mid = (start + end)/2;
-            if(target == nums[mid]){
-                return mid;
-            }
-            else if(nums[mid] >= nums[start]){ //unrotated part of the array
-                if(target >= nums[start] && target < nums[mid]) 
-                    end = mid-1;
-                else
-                    start = mid+1;
-            }
-            else{ //rotated part of the array
-                if(target <= nums[end] && target > nums[mid])
-                    start = mid+1;
-                else
-                    end = mid-1;
-            }
+            return -1;
         }
-        cout<<start<<" "<<end<<endl;
-        return -1;
-    }
-};
-{% endhighlight %}
+    };
+```
 
 ### **Notes**
 
 * Binary Search Problem
 * Figure out what part of the array the middle element and target belong to and accordingly change start and end of the binary search.
 
-## **DFS GRAPH**
+2. ## **DFS GRAPH**
 
-{% highlight C++ linenos %}
+   ```C++
+       #include <iostream>
+       #include <list>
+       #include<memory>
+       using namespace std;
+
+        class Node{
+            public:
+            int val;
+            int stat; //0 if unvisited 1 if visited and -1 if visiting
+            list<Node*> neighbors;
+
+            Node(int val){
+                this->val = val;
+                this->stat = 0;
+            }
+        };
+
+        class Graph{
+            public:
+            list<Node*> vertices;
+        };
+
+        bool dfs_visit(Node* n,int target){
+            if(n->stat == 1){
+                return 0;
+            }
+            if(n->val == target){
+
+                return 1;
+            }
+
+            n->stat = -1; //visiting
+            for(auto neigh: n->neighbors){
+                if(dfs_visit(neigh,target)){
+                    return 1;
+                };
+            }
+
+            n->stat = 1; //visited
+            return 0;
+
+        }
+        int main()
+        {
+
+            Node n1(1),n2(5),n3(6),n4(8),n5(7),n6(9);
+            Graph le_graph;
+            n1.neighbors.push_back(&n2);
+            n1.neighbors.push_back(&n3);
+            n2.neighbors.push_back(&n4);
+            n3.neighbors.push_back(&n4);
+            n3.neighbors.push_back(&n5);
+            n4.neighbors.push_back(&n6);
+
+            le_graph.vertices.push_back(&n1);
+            le_graph.vertices.push_back(&n2);
+            le_graph.vertices.push_back(&n3);
+            le_graph.vertices.push_back(&n4);
+            le_graph.vertices.push_back(&n5);
+            le_graph.vertices.push_back(&n6);
+            int target = 100;
+
+            if(dfs_visit(&n1,target)){
+                cout<<"target found";
+            }
+            else{
+                cout<<"not found"<<"\n";
+            }
+
+            return 0;
+        }
+    ```
+
+3. ## **BFS GRAPH**
+
+    ```C++
     #include <iostream>
     #include <list>
     #include<memory>
+    #include<queue>
     using namespace std;
 
-    class Node{
+    class Node
+    {
         public:
         int val;
         int stat; //0 if unvisited 1 if visited and -1 if visiting
@@ -78,31 +157,41 @@ public:
         }
     };
 
-    class Graph{
+    class Graph
+    {
         public:
         list<Node*> vertices;
     };
-
-    bool dfs_visit(Node* n,int target){
-        if(n->stat == 1){
-            return 0;
-        }
-        if(n->val == target){
-
-            return 1;
+  
+    void bfs(Node* start)
+    {
+        if(start->stat == 1|| start== NULL)
+        {
+            return;
         }
 
-        n->stat = -1; //visiting
-        for(auto neigh: n->neighbors){
-            if(dfs_visit(neigh,target)){
-                return 1;
-            };
+    queue<Node*> q;
+    q.push(start);
+    start->stat = -1;
+        while(!q.empty())
+        {
+            Node* current = q.front();
+            q.pop();
+
+            std::cout<<current->val<<"\n"; //processing the current node
+            for(auto neigh: current->neighbors)
+            {
+                if(neigh->stat == 0) //only processing the unvisited nodes
+                {
+                    q.push(neigh);
+                    neigh->stat = -1;
+                }
+            }
+            current->stat = 1;
         }
-
-        n->stat = 1; //visited
-        return 0;
-
+     return;
     }
+
     int main()
     {
 
@@ -123,235 +212,147 @@ public:
         le_graph.vertices.push_back(&n6);
         int target = 100;
 
-        if(dfs_visit(&n1,target)){
-            cout<<"target found";
-        }
-        else{
-            cout<<"not found"<<"\n";
-        }
+
+        bfs(&n1);
 
         return 0;
-    }
-{% endhighlight %}
-
-1. ## **BFS GRAPH**
-
-{% highlight C++ linenos %}
-#include <iostream>
-#include <list>
-#include<memory>
-#include<queue>
-using namespace std;
-
-class Node
-{
-    public:
-    int val;
-    int stat; //0 if unvisited 1 if visited and -1 if visiting
-    list<Node*> neighbors;
-
-    Node(int val){
-        this->val = val;
-        this->stat = 0;
-    }
-};
-
-class Graph
-{
-    public:
-    list<Node*> vertices;
-};
-
-void bfs(Node* start)
-{
-    if(start->stat == 1|| start== NULL)
-    {
-        return;
-    }
-
-queue<Node*> q;
-q.push(start);
-start->stat = -1;
-    while(!q.empty())
-    {
-        Node* current = q.front();
-        q.pop();
-
-        std::cout<<current->val<<"\n"; //processing the current node
-        for(auto neigh: current->neighbors)
-        {
-            if(neigh->stat == 0) //only processing the unvisited nodes
-            {
-                q.push(neigh);
-                neigh->stat = -1;
-            }
-        }
-        current->stat = 1;
-    }
-    return;
-}
-
-int main()
-{
-
-    Node n1(1),n2(5),n3(6),n4(8),n5(7),n6(9);
-    Graph le_graph;
-    n1.neighbors.push_back(&n2);
-    n1.neighbors.push_back(&n3);
-    n2.neighbors.push_back(&n4);
-    n3.neighbors.push_back(&n4);
-    n3.neighbors.push_back(&n5);
-    n4.neighbors.push_back(&n6);
-
-    le_graph.vertices.push_back(&n1);
-    le_graph.vertices.push_back(&n2);
-    le_graph.vertices.push_back(&n3);
-    le_graph.vertices.push_back(&n4);
-    le_graph.vertices.push_back(&n5);
-    le_graph.vertices.push_back(&n6);
-    int target = 100;
-
-
-    bfs(&n1);
-
-    return 0;
-    }
-{% endhighlight %}
+     }
+    ```
 
 4. ## **Checking if Graph is Bipartite**
 
-{% highlight C++ linenos %}
-class Solution {
-public:
+    ```C++
+    class Solution {
+    public:
 
-    bool isBipartite(vector<vector<int>>& graph) {
+        bool isBipartite(vector<vector<int>>& graph) {
 
-        vector<int> stat(graph.size(),0); //maintain status of a node
+            vector<int> stat(graph.size(),0); //maintain status of a node
 
-        for(int i =0 ;i <graph.size();i++){ // go through all the components of the graph
+            for(int i =0 ;i <graph.size();i++){ // go through all the components of the graph
 
-            if(stat[i] == 1) continue;
-            int start = i;
+                if(stat[i] == 1) continue;
+                int start = i;
 
-            vector<int> level(graph.size(),-1); //maintain bfs level of the expansions
-            level[start] = 0;
-            queue<int> bfs_q;
-            bfs_q.push(start);
-            stat[start] = -1;
-            int curr_level = 0;
+                vector<int> level(graph.size(),-1); //maintain bfs level of the expansions
+                level[start] = 0;
+                queue<int> bfs_q;
+                bfs_q.push(start);
+                stat[start] = -1;
+                int curr_level = 0;
 
-            while(!bfs_q.empty()) //bfs visit
-            {
-                int curr_node = bfs_q.front();
-                bfs_q.pop();
-
-                curr_level = level[curr_node] + 1;
-                for(int ngb: graph[curr_node])
+                while(!bfs_q.empty()) //bfs visit
                 {
-                    if(stat[ngb] == 1) continue;
+                    int curr_node = bfs_q.front();
+                    bfs_q.pop();
 
-                    if(level[ngb] == level[curr_node]) //odd cycle
+                    curr_level = level[curr_node] + 1;
+                    for(int ngb: graph[curr_node])
                     {
-                        return 0;
+                        if(stat[ngb] == 1) continue;
+
+                        if(level[ngb] == level[curr_node]) //odd cycle
+                        {
+                            return 0;
+                        }
+
+                        bfs_q.push(ngb);
+                        stat[ngb] = -1;
+
+                        level[ngb] = curr_level;
                     }
 
-                    bfs_q.push(ngb);
-                    stat[ngb] = -1;
-
-                    level[ngb] = curr_level;
+                    stat[curr_node] = 1; //done processing current node
                 }
-
-                stat[curr_node] = 1; //done processing current node
             }
+            return 1;
         }
-        return 1;
-    }
-};
-{% endhighlight %}
+    };
+    ```
 
-### **Notes**
+    ### **Notes**
 
-* Bipartite Graph is a graph in which we can seperate the nodes in two groups such that there are no edges between node of a group.
-* Usually asked for undirecte graphs.
-* Implented using **BFS** by keeping track of the level of nodes.
-* If the level a parent and a neighbour node is same then there is an odd cycle in the graph and the graph is not Bipartite.
+    * Bipartite Graph is a graph in which we can seperate the nodes in two groups such that there are no edges between node of a group.
+    * Usually asked for undirecte graphs.
+    * Implented using **BFS** by keeping track of the level of nodes.
+    * If the level a parent and a neighbour node is same then there is an odd cycle in the graph and the graph is not Bipartite.
 
 5. ## **Finding Groups in Bipartite Graphs**<br/> [LeetCode](https://leetcode.com/problems/possible-bipartition/)
 
-{% highlight C++ linenos %}
-class Solution {
-public:
-    bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
-        vector<int> stat(N,0);
-        vector<vector<int>> graph(N);
+    ```C++
+    class Solution {
+    public:
+        bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
+            vector<int> stat(N,0);
+            vector<vector<int>> graph(N);
 
-        for(auto dislike:dislikes)
-        {
-            graph[dislike[0]-1].push_back(dislike[1]-1);  //creating an undirected graph
-
-            graph[dislike[1]-1].push_back(dislike[0]-1);
-
-        }
-
-        vector<int> group1;
-        vector<int> group2;
-        for(int i =0; i<N; i++)
-        {
-            if(stat[i] == 1) continue;
-
-            vector<int> levels(N,-1);
-            int start = i;
-            levels[start] = 0;
-            queue<int> bfs_q;
-            bfs_q.push(start);
-            stat[start] = -1;
-            int curr_level = 0;
-            while(!bfs_q.empty())
+            for(auto dislike:dislikes)
             {
-                int curr_node = bfs_q.front();
-                bfs_q.pop();
+                graph[dislike[0]-1].push_back(dislike[1]-1);  //creating an undirected graph
 
-                if(stat[curr_node] == 1) continue;
+                graph[dislike[1]-1].push_back(dislike[0]-1);
 
-                curr_level = levels[curr_node] + 1;
-                if(curr_level%2 == 0) //adding to corresponding group
-                {
-                    group1.push_back(curr_node);
-                }
-                else
-                {
-                    group2.push_back(curr_node);
-                }
-                for(int ngb: graph[curr_node])
-                {
-                    if(stat[ngb] == 1) continue;
-                    if(levels[ngb] == levels[curr_node]) return 0;
-                    bfs_q.push(ngb);
-                    stat[ngb] = -1;
-                    levels[ngb] = curr_level;
-                }
-                stat[curr_node] = 1;
             }
 
-        }
-        for(auto a:group1){
-            cout<<a+1<<" ";
-        }
-        return 1;
-    }
-};
-{% endhighlight %}
+            vector<int> group1;
+            vector<int> group2;
+            for(int i =0; i<N; i++)
+            {
+                if(stat[i] == 1) continue;
 
-### **NOTES**
-* Maintain the expansion level during bfs.
-* All nodeat even levels go to one class and the odd ones go to the other
-* given the edges only convert it to a graph first.
+                vector<int> levels(N,-1);
+                int start = i;
+                levels[start] = 0;
+                queue<int> bfs_q;
+                bfs_q.push(start);
+                stat[start] = -1;
+                int curr_level = 0;
+                while(!bfs_q.empty())
+                {
+                    int curr_node = bfs_q.front();
+                    bfs_q.pop();
+
+                    if(stat[curr_node] == 1) continue;
+
+                    curr_level = levels[curr_node] + 1;
+                    if(curr_level%2 == 0) //adding to corresponding group
+                    {
+                        group1.push_back(curr_node);
+                    }
+                    else
+                    {
+                        group2.push_back(curr_node);
+                    }
+                    for(int ngb: graph[curr_node])
+                    {
+                        if(stat[ngb] == 1) continue;
+                        if(levels[ngb] == levels[curr_node]) return 0;
+                        bfs_q.push(ngb);
+                        stat[ngb] = -1;
+                        levels[ngb] = curr_level;
+                    }
+                    stat[curr_node] = 1;
+                }
+
+            }
+            for(auto a:group1){
+                cout<<a+1<<" ";
+            }
+            return 1;
+        }
+    };
+    ```
+
+    ### **NOTES**
+    * Maintain the expansion level during bfs.
+    * All nodeat even levels go to one class and the odd ones go to the other
+    * given the edges only convert it to a graph first.
 
 6. ## **Number of Islands**<br/>[Leetcode](https://leetcode.com/problems/number-of-islands/)
 
     Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
     public:
         char query(int y, int x, vector<vector<char>>& grid) //helper funtion for reading the grid
@@ -413,7 +414,7 @@ public:
             return num_islands;
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **NOTES**
     * Formulate Problem as finding connected components of a graph.
@@ -423,7 +424,7 @@ public:
 
     Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
 
-    {% highlight C++ linenos %}
+    ```C++
     /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -464,13 +465,13 @@ public:
             return max_path - 1;
         }
     };
-    {% endhighlight %}
+    ```
 
 8. ## **Lowest Common Ancestor Binary Tree**<br/> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
    Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 
-   {% highlight C++ linenos %}
+   ```C++
     /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -507,14 +508,14 @@ public:
             return lca_util(root,p,q);
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **NOTES**
     * Follow the bottom to up approach.
 
 9. ## **Validating a BST** <br/> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/submissions/)
 
-    {% highlight C++ linenos %}
+    ```C++
     /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -573,7 +574,7 @@ public:
             return false;
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
     * Make sure the Maximum of the left subtree is less than the root and min orf the right subtree is greater than the root.
@@ -583,7 +584,7 @@ public:
 
     You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
     public:
 
@@ -619,7 +620,7 @@ public:
             return util_coins(coins,amount,count);
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **Intution**
 
@@ -629,7 +630,7 @@ public:
 
 11. ## **Lowest Common Ancestor BST**<br/>[Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/)
 
-    {% highlight C++ linenos %}
+    ```C++
         /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -661,13 +662,13 @@ public:
             }
         }
     };
-    {% endhighlight %}
+    ```
 
 12. ## **Merge Intervals**<br/> [Leetcode](https://leetcode.com/problems/merge-intervals/)
 
     Given a collection of intervals, merge all overlapping intervals.
 
-    {% highlight C++ linenos %}
+    ```C++
     struct Point{
     int val;
     bool start;
@@ -735,7 +736,7 @@ public:
             return merged_intervals;
        }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
 
@@ -748,7 +749,7 @@ public:
 
     Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
-    {% highlight C++ linenos %}
+    ```C++
         class Solution {
         public:
 
@@ -797,7 +798,7 @@ public:
             return findkthUtil(nums,nums.size() - k,start,end);
         }
     };
-    {% endhighlight %}
+    ```
     ### **Notes**
 
     * Algorithm for finding kth smallest or largest element in array.
@@ -805,7 +806,7 @@ public:
 
 14. ## **Merge Sort**
 
-    {% highlight C++ linenos %}
+    ```C++
         class Solution {
         public:
 
@@ -863,7 +864,7 @@ public:
 
             }
         };
-    {% endhighlight %}
+    ```
 
 15. ## **Distribute Coins in a Binary Tree**<br/>[Leetcode](https://leetcode.com/problems/distribute-coins-in-binary-tree/solution/)
     Given the root of a binary tree with N nodes, each node in the tree has node.val coins, and there are N coins total.
@@ -872,7 +873,7 @@ public:
 
     Return the number of moves required to make every node have exactly one coin.
 
-    {% highlight C++ linenos %}
+    ```C++
         class Solution {
             public:
                 int ans;
@@ -890,7 +891,7 @@ public:
                     return node->val + L + R - 1;
                 }
     };
-    {% endhighlight %}
+    ```
 
     ### **NOTES**
 
@@ -901,7 +902,7 @@ public:
 
     We are given the head node root of a binary tree, where additionally every node's value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
         public:
             bool prune_helper(TreeNode* node, TreeNode* parent){
@@ -934,7 +935,7 @@ public:
                 return root;
             }
     };
-    {% endhighlight %}
+    ```
 
     ## **Notes**
 
@@ -946,7 +947,7 @@ public:
 
     ### **Approach 1**
 
-    {% highlight C++ linenos %}
+    ```C++
         class Solution {
         public:
 
@@ -1018,7 +1019,7 @@ public:
 18. ## **Convert Binary Search Tree to Greater Tree** <br/> [Leetcode](https://leetcode.com/problems/convert-bst-to-greater-tree/submissions/)
     Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
         public:
 
@@ -1042,7 +1043,7 @@ public:
                 return sum;
             }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
 
@@ -1053,7 +1054,7 @@ public:
 
     Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
-    {% highlight C++ linenos %}
+    ```C++
         class Solution {
         public:
 
@@ -1110,7 +1111,7 @@ public:
             return bst_util(head);
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
 
@@ -1121,7 +1122,7 @@ public:
 
     Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
     public:
 
@@ -1147,7 +1148,7 @@ public:
 
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
 
@@ -1161,7 +1162,7 @@ public:
 
     Given a N*N matrix M representing the friend relationship between students in the class. If $M[i][j] = 1$, then the ith and jth students are direct friends with each other, otherwise not. And you have to output the total number of friend circles among all the students.
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
     public:
         void dfs_visit(int person, vector<bool> &visited, vector<vector<int>>& M){
@@ -1191,7 +1192,7 @@ public:
             return groups;
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
     * This a question regarding finding components in a graph
@@ -1204,7 +1205,7 @@ public:
 
     You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-    {% highlight C++ linenos %}
+    ```C++
     class Solution {
     public:
         ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -1231,7 +1232,7 @@ public:
             return ret->next;
         }
     };
-    {% endhighlight %}
+    ```
 
     ### **Notes**
 
