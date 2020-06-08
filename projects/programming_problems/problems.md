@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: LeetCode Madness
 subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
@@ -7,7 +7,7 @@ bigimg: "img/snow.jpg"
 
 # PROGRAMMING PROBLEMS
 
-1. ## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.</br>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+1. ## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
     (i.e., $[0,1,2,4,5,6,7]$ might become $[4,5,6,7,0,1,2]$).
 
@@ -19,7 +19,7 @@ bigimg: "img/snow.jpg"
 
     **Example 1:**
     **Input**: $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 0.
-    **Output**: 4 </br>
+    **Output**: 4 <br/>
 
     **Example 2:**
     **Input:** $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 3 **Output:** -1
@@ -276,7 +276,7 @@ bigimg: "img/snow.jpg"
     * Implented using **BFS** by keeping track of the level of nodes.
     * If the level a parent and a neighbour node is same then there is an odd cycle in the graph and the graph is not Bipartite.
 
-5. ## **Finding Groups in Bipartite Graphs**</br> [LeetCode](https://leetcode.com/problems/possible-bipartition/)
+5. ## **Finding Groups in Bipartite Graphs**<br/> [LeetCode](https://leetcode.com/problems/possible-bipartition/)
 
     ```C++
     class Solution {
@@ -347,7 +347,7 @@ bigimg: "img/snow.jpg"
     * All nodeat even levels go to one class and the odd ones go to the other
     * given the edges only convert it to a graph first.
 
-6. ## **Number of Islands**</br>[Leetcode](https://leetcode.com/problems/number-of-islands/)
+6. ## **Number of Islands**<br/>[Leetcode](https://leetcode.com/problems/number-of-islands/)
 
     Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
@@ -419,7 +419,7 @@ bigimg: "img/snow.jpg"
     * Formulate Problem as finding connected components of a graph.
     * Each connected component is an island.
 
-7. ## **Diameter of a Binary Tree** </br> [Leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
+7. ## **Diameter of a Binary Tree** <br/> [Leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
 
     Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
 
@@ -466,7 +466,7 @@ bigimg: "img/snow.jpg"
     };
     ```
 
-8. ## **Lowest Common Ancestor Binary Tree**</br> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+8. ## **Lowest Common Ancestor Binary Tree**<br/> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
    Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 
@@ -512,7 +512,7 @@ bigimg: "img/snow.jpg"
     ### **NOTES**
     * Follow the bottom to up approach.
 
-9. ## **Validating a BST** </br> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/submissions/)
+9. ## **Validating a BST** <br/> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/submissions/)
 
     ```C++
     /**
@@ -579,7 +579,7 @@ bigimg: "img/snow.jpg"
     * Make sure the Maximum of the left subtree is less than the root and min orf the right subtree is greater than the root.
     * Do it in bottom to top fashion considering the leave nodes as always balanced.
 
-10. ## **Coin Change Problem DP**</br> [Leetcode](https://leetcode.com/problems/coin-change/)
+10. ## **Coin Change Problem DP**<br/> [Leetcode](https://leetcode.com/problems/coin-change/)
 
     You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
@@ -623,11 +623,11 @@ bigimg: "img/snow.jpg"
 
     ### **Intution**
 
-    We can use top to bottom approach of Dynamic Programming. Optimal substructure of the problem is </br>$F(s) = F(s-c) +1$ .</br> But as we dont know the denomination of the closest last coin C to S. We compute $F(S-C_i)$ for each possible denomination and choose the minimum among them.  The following recuurence relation holds:</br>
-    $F(S) = \min_{i=0..n-1} F(S-c_i)+1$ </br>
+    We can use top to bottom approach of Dynamic Programming. Optimal substructure of the problem is <br/>$F(s) = F(s-c) +1$ .<br/> But as we dont know the denomination of the closest last coin C to S. We compute $F(S-C_i)$ for each possible denomination and choose the minimum among them.  The following recuurence relation holds:<br/>
+    $F(S) = \min_{i=0..n-1} F(S-c_i)+1$ <br/>
     subject to $S-c_i \geq 0$.
 
-11. ## **Lowest Common Ancestor BST**</br>[Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/)
+11. ## **Lowest Common Ancestor BST**<br/>[Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/)
 
     ```C++
         /**
@@ -663,7 +663,7 @@ bigimg: "img/snow.jpg"
     };
     ```
 
-12. ## **Merge Intervals**</br> [Leetcode](https://leetcode.com/problems/merge-intervals/)
+12. ## **Merge Intervals**<br/> [Leetcode](https://leetcode.com/problems/merge-intervals/)
 
     Given a collection of intervals, merge all overlapping intervals.
 
@@ -744,7 +744,7 @@ bigimg: "img/snow.jpg"
     * sort the vector of points according to time vals.
     * go through the vector and accordingly modify the count and keep track of start and end of overlapping intervals.
 
-13. ## **Kth order Statistics (Selection Algorithm)**</br>[Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/)
+13. ## **Kth order Statistics (Selection Algorithm)**<br/>[Leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/)
 
     Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
@@ -865,7 +865,7 @@ bigimg: "img/snow.jpg"
         };
     ```
 
-15. ## **Distribute Coins in a Binary Tree**</br>[Leetcode](https://leetcode.com/problems/distribute-coins-in-binary-tree/solution/)
+15. ## **Distribute Coins in a Binary Tree**<br/>[Leetcode](https://leetcode.com/problems/distribute-coins-in-binary-tree/solution/)
     Given the root of a binary tree with N nodes, each node in the tree has node.val coins, and there are N coins total.
 
     In one move, we may choose two adjacent nodes and move one coin from one node to another.  (The move may be from parent to child, or from child to parent.)
@@ -897,7 +897,7 @@ bigimg: "img/snow.jpg"
     * **Intiution**: Moves to baalnce a leaf is $abs(NumCoins_{leaf} -1)$
     * **Algorithm**: &nbsp; $moves_{node} = moves_{left} + moves_{right} + node\rightarrow val -1$
 
-16. ## **Binary Tree Pruning**</br>[Leetcode](https://leetcode.com/problems/binary-tree-pruning/)
+16. ## **Binary Tree Pruning**<br/>[Leetcode](https://leetcode.com/problems/binary-tree-pruning/)
 
     We are given the head node root of a binary tree, where additionally every node's value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
 
@@ -940,7 +940,7 @@ bigimg: "img/snow.jpg"
 
     * Recursively from bottom to top check subtrees and make pointers NULL accordingly.
 
-17. ## **Finding Duplicate Subtrees**</br>[Leetcode](https://leetcode.com/problems/find-duplicate-subtrees/)
+17. ## **Finding Duplicate Subtrees**<br/>[Leetcode](https://leetcode.com/problems/find-duplicate-subtrees/)
 
     Given a binary tree, return all duplicate subtrees. For each kind of duplicate subtrees, you only need to return the root node of any one of them.
 
@@ -1015,7 +1015,7 @@ bigimg: "img/snow.jpg"
         }
     };
 
-18. ## **Convert Binary Search Tree to Greater Tree** </br> [Leetcode](https://leetcode.com/problems/convert-bst-to-greater-tree/submissions/)
+18. ## **Convert Binary Search Tree to Greater Tree** <br/> [Leetcode](https://leetcode.com/problems/convert-bst-to-greater-tree/submissions/)
     Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
 
     ```C++
@@ -1049,7 +1049,7 @@ bigimg: "img/snow.jpg"
     * Just do a reverse in order traversal by traversing right subtrees first.
     * Maintain a global sum variable and accordingly modify the value of the node.
 
-19. ## **Convert Sorted List to Binary Search Tree** </br> [Leetcode](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
+19. ## **Convert Sorted List to Binary Search Tree** <br/> [Leetcode](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/)
 
     Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
@@ -1117,7 +1117,7 @@ bigimg: "img/snow.jpg"
     * Use fast slow pointers to find median of the list.
     * Recursively keep splitting the list in two and modify the left and right pointers.
 
-20. ## **Unique Binary Search Trees**</br>[Leetcode](https://leetcode.com/problems/unique-binary-search-trees/)
+20. ## **Unique Binary Search Trees**<br/>[Leetcode](https://leetcode.com/problems/unique-binary-search-trees/)
 
     Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 
@@ -1155,7 +1155,7 @@ bigimg: "img/snow.jpg"
 
     * If we have ith number as root then the left subtree can have $i-1$
 
-21. ## **Friend Circles**</br>[Leetcode](https://leetcode.com/problems/friend-circles/)
+21. ## **Friend Circles**<br/>[Leetcode](https://leetcode.com/problems/friend-circles/)
 
     There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. For example, if A is a direct friend of B, and B is a direct friend of C, then A is an indirect friend of C. And we defined a friend circle is a group of students who are direct or indirect friends.
 
@@ -1198,7 +1198,7 @@ bigimg: "img/snow.jpg"
     * You try to visit each group using dfs and keep track using a visited flag.
     * Very similar to counting islands question.
 
-22. ## **Add Two Numbers**</br>[Leetcode](https://leetcode.com/problems/add-two-numbers/)
+22. ## **Add Two Numbers**<br/>[Leetcode](https://leetcode.com/problems/add-two-numbers/)
     
     You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
