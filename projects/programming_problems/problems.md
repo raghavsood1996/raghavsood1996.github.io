@@ -9,55 +9,55 @@ bigimg: "img/snow.jpg"
 
 1. ## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
-    (i.e., $[0,1,2,4,5,6,7]$ might become $[4,5,6,7,0,1,2]$).
+(i.e., $[0,1,2,4,5,6,7]$ might become $[4,5,6,7,0,1,2]$).
 
-    You are given a target value to search. If found in the array return its index, otherwise return -1.
+You are given a target value to search. If found in the array return its index, otherwise return -1.
 
-    You may assume no duplicate exists in the array.
+You may assume no duplicate exists in the array.
 
-    Your algorithm's runtime complexity must be in the order of O(log n).
+Your algorithm's runtime complexity must be in the order of O(log n).
 
-    **Example 1:**
-    **Input**: $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 0.
-    **Output**: 4 <br/>
+**Example 1:**
+**Input**: $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 0.
+**Output**: 4 <br/>
 
-    **Example 2:**
-    **Input:** $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 3 **Output:** -1
+**Example 2:**
+**Input:** $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 3 **Output:** -1
 
-    {% highlight C++ linenos %}
-        class Solution {
-        public:
-            int search(vector<int>& nums, int target) {
-                int start = 0, end = nums.size()-1;
-                while(start <= end){
-                    cout<<start<<" "<<end<<endl;
-                    int mid = (start + end)/2;
-                    if(target == nums[mid]){
-                        return mid;
-                    }
-                    else if(nums[mid] >= nums[start]){ //unrotated part of the array
-                        if(target >= nums[start] && target < nums[mid]) 
-                            end = mid-1;
-                        else
-                            start = mid+1;
-                    }
-                    else{ //rotated part of the array
-                        if(target <= nums[end] && target > nums[mid])
-                            start = mid+1;
-                        else
-                            end = mid-1;
-                    }
-                }
+```C++
+    class Solution {
+    public:
+        int search(vector<int>& nums, int target) {
+            int start = 0, end = nums.size()-1;
+            while(start <= end){
                 cout<<start<<" "<<end<<endl;
-                return -1;
+                int mid = (start + end)/2;
+                if(target == nums[mid]){
+                    return mid;
+                }
+                else if(nums[mid] >= nums[start]){ //unrotated part of the array
+                    if(target >= nums[start] && target < nums[mid]) 
+                        end = mid-1;
+                    else
+                        start = mid+1;
+                }
+                else{ //rotated part of the array
+                    if(target <= nums[end] && target > nums[mid])
+                        start = mid+1;
+                    else
+                        end = mid-1;
+                }
             }
-        };
-    {% endhighlight %}
+            cout<<start<<" "<<end<<endl;
+            return -1;
+        }
+    };
+```
 
-    ### **Notes**
+### **Notes**
 
-    * Binary Search Problem
-    * Figure out what part of the array the middle element and target belong to and accordingly change start and end of the binary search.
+* Binary Search Problem
+* Figure out what part of the array the middle element and target belong to and accordingly change start and end of the binary search.
 
 2. ## **DFS GRAPH**
 
@@ -271,6 +271,7 @@ bigimg: "img/snow.jpg"
     ```
 
     ### **Notes**
+
     * Bipartite Graph is a graph in which we can seperate the nodes in two groups such that there are no edges between node of a group.
     * Usually asked for undirecte graphs.
     * Implented using **BFS** by keeping track of the level of nodes.
