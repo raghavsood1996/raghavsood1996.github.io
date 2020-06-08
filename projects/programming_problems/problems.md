@@ -1,5 +1,5 @@
 ---
-layout: pge
+layout: page
 title: LeetCode Madness
 subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
