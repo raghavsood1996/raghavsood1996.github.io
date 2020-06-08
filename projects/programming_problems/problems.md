@@ -62,7 +62,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
 2. ## **DFS GRAPH**
 
-   ```C++
+   {% highlight C++ linenos %}
        #include <iostream>
        #include <list>
         #include<memory>
@@ -134,11 +134,11 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
             return 0;
         }
-    ```
+    {% endhighlight %}
 
 3. ## **BFS GRAPH**
 
-    ```C++
+    {% highlight C++ linenos %}
     #include <iostream>
     #include <list>
     #include<memory>
@@ -218,11 +218,11 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
         return 0;
      }
-    ```
+    {% endhighlight %}
 
 4. ## **Checking if Graph is Bipartite**
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
 
@@ -269,7 +269,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return 1;
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
@@ -280,7 +280,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
 5. ## **Finding Groups in Bipartite Graphs**<br/> [LeetCode](https://leetcode.com/problems/possible-bipartition/)
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
         bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
@@ -342,7 +342,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return 1;
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **NOTES**
     * Maintain the expansion level during bfs.
@@ -353,7 +353,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
         char query(int y, int x, vector<vector<char>>& grid) //helper funtion for reading the grid
@@ -415,7 +415,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return num_islands;
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **NOTES**
     * Formulate Problem as finding connected components of a graph.
@@ -425,7 +425,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
 
-    ```C++
+    {% highlight C++ linenos %}
     /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -466,13 +466,13 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return max_path - 1;
         }
     };
-    ```
+    {% endhighlight %}
 
 8. ## **Lowest Common Ancestor Binary Tree**<br/> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
    Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 
-   ```C++
+   {% highlight C++ linenos %}
     /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -509,14 +509,14 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return lca_util(root,p,q);
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **NOTES**
     * Follow the bottom to up approach.
 
 9. ## **Validating a BST** <br/> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/submissions/)
 
-    ```C++
+    {% highlight C++ linenos %}
     /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -575,7 +575,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return false;
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
     * Make sure the Maximum of the left subtree is less than the root and min orf the right subtree is greater than the root.
@@ -585,7 +585,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
 
@@ -621,7 +621,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return util_coins(coins,amount,count);
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Intution**
 
@@ -631,7 +631,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
 11. ## **Lowest Common Ancestor BST**<br/>[Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/)
 
-    ```C++
+    {% highlight C++ linenos %}
         /**
     * Definition for a binary tree node.
     * struct TreeNode {
@@ -663,13 +663,13 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             }
         }
     };
-    ```
+    {% endhighlight %}
 
 12. ## **Merge Intervals**<br/> [Leetcode](https://leetcode.com/problems/merge-intervals/)
 
     Given a collection of intervals, merge all overlapping intervals.
 
-    ```C++
+    {% highlight C++ linenos %}
     struct Point{
     int val;
     bool start;
@@ -737,7 +737,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return merged_intervals;
        }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
@@ -750,7 +750,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
-    ```C++
+    {% highlight C++ linenos %}
         class Solution {
         public:
 
@@ -799,7 +799,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return findkthUtil(nums,nums.size() - k,start,end);
         }
     };
-    ```
+    {% endhighlight %}
     ### **Notes**
 
     * Algorithm for finding kth smallest or largest element in array.
@@ -807,7 +807,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
 14. ## **Merge Sort**
 
-    ```C++
+    {% highlight C++ linenos %}
         class Solution {
         public:
 
@@ -865,7 +865,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
             }
         };
-    ```
+    {% endhighlight %}
 
 15. ## **Distribute Coins in a Binary Tree**<br/>[Leetcode](https://leetcode.com/problems/distribute-coins-in-binary-tree/solution/)
     Given the root of a binary tree with N nodes, each node in the tree has node.val coins, and there are N coins total.
@@ -874,7 +874,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Return the number of moves required to make every node have exactly one coin.
 
-    ```C++
+    {% highlight C++ linenos %}
         class Solution {
             public:
                 int ans;
@@ -892,7 +892,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
                     return node->val + L + R - 1;
                 }
     };
-    ```
+    {% endhighlight %}
 
     ### **NOTES**
 
@@ -903,7 +903,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     We are given the head node root of a binary tree, where additionally every node's value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
         public:
             bool prune_helper(TreeNode* node, TreeNode* parent){
@@ -936,7 +936,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
                 return root;
             }
     };
-    ```
+    {% endhighlight %}
 
     ## **Notes**
 
@@ -948,7 +948,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     ### **Approach 1**
 
-    ```C++
+    {% highlight C++ linenos %}
         class Solution {
         public:
 
@@ -1020,7 +1020,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 18. ## **Convert Binary Search Tree to Greater Tree** <br/> [Leetcode](https://leetcode.com/problems/convert-bst-to-greater-tree/submissions/)
     Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
         public:
 
@@ -1044,7 +1044,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
                 return sum;
             }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
@@ -1055,7 +1055,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
-    ```C++
+    {% highlight C++ linenos %}
         class Solution {
         public:
 
@@ -1112,7 +1112,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return bst_util(head);
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
@@ -1123,7 +1123,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
 
@@ -1149,7 +1149,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
@@ -1163,7 +1163,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     Given a N*N matrix M representing the friend relationship between students in the class. If $M[i][j] = 1$, then the ith and jth students are direct friends with each other, otherwise not. And you have to output the total number of friend circles among all the students.
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
         void dfs_visit(int person, vector<bool> &visited, vector<vector<int>>& M){
@@ -1193,7 +1193,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return groups;
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
     * This a question regarding finding components in a graph
@@ -1206,7 +1206,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 
     You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-    ```C++
+    {% highlight C++ linenos %}
     class Solution {
     public:
         ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -1233,7 +1233,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
             return ret->next;
         }
     };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
