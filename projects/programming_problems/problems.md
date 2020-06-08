@@ -24,7 +24,7 @@ bigimg: "img/snow.jpg"
     **Example 2:**
     **Input:** $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 3 **Output:** -1
 
-    ```C++
+    {% highlight C++ linenos %}
         class Solution {
         public:
             int search(vector<int>& nums, int target) {
@@ -52,7 +52,7 @@ bigimg: "img/snow.jpg"
                 return -1;
             }
         };
-    ```
+    {% endhighlight %}
 
     ### **Notes**
 
