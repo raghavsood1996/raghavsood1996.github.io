@@ -5,7 +5,6 @@ subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
 ---
 
-# PROGRAMMING PROBLEMS
 
 1. ## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
@@ -25,34 +24,33 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 **Input:** $\mathbf{nums = [4,5,6,7,0,1,2]}$, **target** = 3 **Output:** -1
 
 {% highlight C++ linenos %}
-    class Solution {
-    public:
-        int search(vector<int>& nums, int target) {
-            int start = 0, end = nums.size()-1;
-            while(start <= end){
-                cout<<start<<" "<<end<<endl;
-                int mid = (start + end)/2;
-                if(target == nums[mid]){
-                    return mid;
-                }
-                else if(nums[mid] >= nums[start]){ //unrotated part of the array
-                    if(target >= nums[start] && target < nums[mid]) 
-                        end = mid-1;
-                    else
-                        start = mid+1;
-                }
-                else{ //rotated part of the array
-                    if(target <= nums[end] && target > nums[mid])
-                        start = mid+1;
-                    else
-                        end = mid-1;
-                }
-            }
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int start = 0, end = nums.size()-1;
+        while(start <= end){
             cout<<start<<" "<<end<<endl;
-            return -1;
+            int mid = (start + end)/2;
+            if(target == nums[mid]){
+                return mid;
+            }
+            else if(nums[mid] >= nums[start]){ //unrotated part of the array
+                if(target >= nums[start] && target < nums[mid]) 
+                    end = mid-1;
+                else
+                    start = mid+1;
+            }
+            else{ //rotated part of the array
+                if(target <= nums[end] && target > nums[mid])
+                    start = mid+1;
+                else
+                    end = mid-1;
+            }
         }
-    };
-
+        cout<<start<<" "<<end<<endl;
+        return -1;
+    }
+};
 {% endhighlight %}
 
 ### **Notes**
@@ -60,7 +58,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
 * Binary Search Problem
 * Figure out what part of the array the middle element and target belong to and accordingly change start and end of the binary search.
 
-2. ## **DFS GRAPH**
+## **DFS GRAPH**
 
 {% highlight C++ linenos %}
     #include <iostream>
@@ -136,7 +134,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
     }
 {% endhighlight %}
 
-3. ## **BFS GRAPH**
+1. ## **BFS GRAPH**
 
 {% highlight C++ linenos %}
 #include <iostream>
