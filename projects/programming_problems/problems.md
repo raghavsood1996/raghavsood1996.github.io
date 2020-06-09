@@ -5,8 +5,6 @@ subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
 ---
 
-# PROGRAMMING PROBLEMS
-
 ## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
 (i.e., $[0,1,2,4,5,6,7]$ might become $[4,5,6,7,0,1,2]$).
@@ -221,7 +219,7 @@ int main()
 
 ## **Checking if Graph is Bipartite**
 
-```C++
+```c++
 class Solution {
 public:
 
@@ -279,7 +277,7 @@ public:
 
 ## **Finding Groups in Bipartite Graphs**<br/> [LeetCode](https://leetcode.com/problems/possible-bipartition/)
 
-```C++
+```c++
 class Solution {
 public:
     bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
@@ -353,7 +351,7 @@ public:
 
 Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
-```C++
+```c++
 class Solution {
 public:
     char query(int y, int x, vector<vector<char>>& grid) //helper funtion for reading the grid
@@ -426,7 +424,7 @@ public:
 
 Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
 
-```C++
+```c++
 /**
 * Definition for a binary tree node.
 * struct TreeNode {
@@ -473,7 +471,7 @@ public:
 
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 
-```C++
+```c++
 /**
 * Definition for a binary tree node.
 * struct TreeNode {
@@ -518,7 +516,7 @@ public:
 
 ## **Validating a BST** <br/> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/submissions/)
 
-```C++
+```c++
 /**
 * Definition for a binary tree node.
 * struct TreeNode {
@@ -588,7 +586,7 @@ public:
 
 You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
-```C++
+```c++
 class Solution {
 public:
 
@@ -634,7 +632,7 @@ subject to $S-c_i \geq 0$.
 
 ## **Lowest Common Ancestor BST**<br/>[Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/submissions/)
 
-```C++
+```c++
     /**
 * Definition for a binary tree node.
 * struct TreeNode {
@@ -672,7 +670,7 @@ public:
 
 Given a collection of intervals, merge all overlapping intervals.
 
-```C++
+```c++
 struct Point{
 int val;
 bool start;
@@ -753,7 +751,7 @@ public:
 
 Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
-```C++
+```c++
     class Solution {
     public:
 
@@ -810,7 +808,7 @@ Find the kth largest element in an unsorted array. Note that it is the kth large
 
 ## **Merge Sort**
 
-```C++
+```c++
     class Solution {
     public:
 
@@ -877,7 +875,7 @@ In one move, we may choose two adjacent nodes and move one coin from one node to
 
 Return the number of moves required to make every node have exactly one coin.
 
-```C++
+```c++
     class Solution {
         public:
             int ans;
@@ -906,7 +904,7 @@ Return the number of moves required to make every node have exactly one coin.
 
 We are given the head node root of a binary tree, where additionally every node's value is either a 0 or a 1. Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
 
-```C++
+```c++
 class Solution {
     public:
         bool prune_helper(TreeNode* node, TreeNode* parent){
@@ -951,7 +949,7 @@ Given a binary tree, return all duplicate subtrees. For each kind of duplicate s
 
 ### **Approach 1**
 
-```C++
+```c++
     class Solution {
     public:
 
@@ -1025,7 +1023,7 @@ Given a binary tree, return all duplicate subtrees. For each kind of duplicate s
 
 Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
 
-```C++
+```c++
 class Solution {
     public:
 
@@ -1060,7 +1058,7 @@ class Solution {
 
 Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
-```C++
+```c++
     class Solution {
     public:
 
@@ -1128,7 +1126,7 @@ Given a singly linked list where elements are sorted in ascending order, convert
 
 Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 
-```C++
+```c++
 class Solution {
 public:
 
@@ -1167,7 +1165,7 @@ There are N students in a class. Some of them are friends, while some are not. T
 
 Given a N*N matrix M representing the friend relationship between students in the class. If $M[i][j] = 1$, then the ith and jth students are direct friends with each other, otherwise not. And you have to output the total number of friend circles among all the students.
 
-```C++
+```c++
 class Solution {
 public:
     void dfs_visit(int person, vector<bool> &visited, vector<vector<int>>& M){
@@ -1211,7 +1209,7 @@ You are given two non-empty linked lists representing two non-negative integers.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-```C++
+```c++
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
