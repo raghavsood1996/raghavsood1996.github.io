@@ -5,8 +5,9 @@ subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
 ---
 
-## Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+## **Search in rotated array** <br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 (i.e., $[0,1,2,4,5,6,7]$ might become $[4,5,6,7,0,1,2]$).
 
 You are given a target value to search. If found in the array return its index, otherwise return -1.
@@ -168,9 +169,9 @@ void bfs(Node* start)
         return;
     }
 
-queue<Node*> q;
-q.push(start);
-start->stat = -1;
+    queue<Node*> q;
+    q.push(start);
+    start->stat = -1;
     while(!q.empty())
     {
         Node* current = q.front();
