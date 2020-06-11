@@ -4,7 +4,7 @@
 title: Raghav Sood
 
 # Short description of your site
-description: Here are some interesting facts about me
+description: Roboticist, Carnegie Mellon University
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -41,7 +41,6 @@ avatar: "/img/avatar-me.jpg"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-bigimg: "/img/16-899.png"
 navbar-col: "#14110F"
 navbar-text-col: "#FFFFFF" # "#FF0000"
 navbar-children-col: "#F5F5F5"
