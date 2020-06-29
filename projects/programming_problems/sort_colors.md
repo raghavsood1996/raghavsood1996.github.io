@@ -1,5 +1,5 @@
 ---
-layout: minimal
+layout: post
 title: Sort Colors
 subtitle: Sorry its all C++!
 bigimg: "img/snow.jpg"
