@@ -2,7 +2,7 @@
 layout: page
 title: LeetCode Madness
 subtitle: Sorry its all C++!
-bigimg: "img/snow.jpg"
+bigimg: "img/programming/programming.jpg"
 ---
 
 ## **Search in rotated array** <br/>[Leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/)

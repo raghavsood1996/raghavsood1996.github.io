@@ -2,7 +2,7 @@
 layout: post
 title: Longest Substring Without Repeating Characters
 subtitle: Sorry its all C++!
-bigimg: "img/snow.jpg"
+bigimg: "img/programming/programming.jpg"
 tags: [array, subarray, sliding_winodw, Leetcode]
 ---
 

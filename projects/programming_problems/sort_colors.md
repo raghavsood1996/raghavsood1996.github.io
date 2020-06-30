@@ -2,7 +2,7 @@
 layout: post
 title: Sort Colors
 subtitle: Sorry its all C++!
-bigimg: "img/snow.jpg"
+bigimg: bigimg: "img/programming/programming.jpg"
 tags: [array, DNF, Leetcode]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Search Insert Position
 subtitle: Sorry its all C++!
-bigimg: "img/snow.jpg"
+bigimg: "img/programming/programming.jpg"
 tags: [array, binary search, Leetcode]
 ---
 
