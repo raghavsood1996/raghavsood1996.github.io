@@ -1302,3 +1302,5 @@ public:
 ## **[Maximum Subarray](maximum_subarray.md)**
 
 ## **[Longest Substring Without Repeating Characters](longest_substring.md)**
+
+## **[Search Insert Position](search_insert_pos.md)**

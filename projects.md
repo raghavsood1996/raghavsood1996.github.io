@@ -7,4 +7,4 @@ bigimg: "img/snow.jpg"
 
 ## [LeetCode Madness](projects/programming_problems/problems.md)
 
-   For all of you trying to land that dream job by trying to conque every single inch of leetcode. Here I provide my [solutions](projects/programming_problems/problems.md) to some top Leetcode problems.
+   For all of you trying to land that dream job by trying to conquer every single inch of leetcode. Here I provide my [solutions](projects/programming_problems/problems.md) to some top Leetcode problems.
