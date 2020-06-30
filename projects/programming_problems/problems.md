@@ -1298,3 +1298,7 @@ public:
 * Again a place where 2 pointer approach comes in handy.
 
 ## **[Sort Colors](sort_colors.md)**
+
+## **[Maximum Subarray](maximum_subarray.md)**
+
+## **[Longest Substring Without Repeating Characters](longest_substring.md)**
