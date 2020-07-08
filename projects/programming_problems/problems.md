@@ -1304,3 +1304,11 @@ public:
 ## **[Longest Substring Without Repeating Characters](longest_substring.md)**
 
 ## **[Search Insert Position](search_insert_pos.md)**
+
+## **[Combinations](combinations.md)**
+
+## **[Letter Combinations of a Phone Number](letter_combinations.md)**
+
+## **[Subsets](subsets.md)**
+
+## **[Word Break](word_break.md)**
