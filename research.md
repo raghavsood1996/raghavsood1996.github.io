@@ -9,7 +9,8 @@ My major interest lies in the field of Motion Planning and Control of autonomous
 
 Most of my research work has been in the field of Search Based motion planning as I have been a part of [Search Based Planning Laboratory](https://www.ri.cmu.edu/robotics-groups/search-based-planning-laboratory/) at CMU for the past year.
 
-Some of my research Projects and Publication are
+
+# **Research Projects**
 
 ## **[Learning to Use Adaptive Motion Primitves in Search-Based Motion Planning](research/iros2020/iros_2020.md)**
 
