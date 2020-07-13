@@ -11,3 +11,8 @@
     margin-right: auto;
     width: 50%;
   }
+
+  .img-container {
+    text-align: center;
+    display: block;
+  }
