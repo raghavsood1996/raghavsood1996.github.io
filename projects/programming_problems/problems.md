@@ -1312,3 +1312,5 @@ public:
 ## **[Subsets](subsets.md)**
 
 ## **[Word Break](word_break.md)**
+
+## **[Implement Trie](trie.md)**
