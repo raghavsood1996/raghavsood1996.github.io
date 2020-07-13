@@ -17,7 +17,7 @@ This work was recently accepted for [International Conference on Intelligent Rob
 
 <img src="research/iros_2020/intro.png"
      alt="IROS 2020"
-     style="float:none ; margin-right: 10px; width:300px;height:300px; class: center" />
+     style="float:right ; margin-right: 10px; width:100px;height:100px; class: center" />
 
 
 In this work we provide an algorithm that intelligently activates *Adaptive Motion Primitives* using Deep Learning for motion planning in navigation domain using Heuristic-based graph search algorithms like A* .Our experiments shows that our approach can lead to upto 2x speedup in planning times.
