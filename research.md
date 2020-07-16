@@ -2,7 +2,7 @@
 layout: page
 title: Research
 subtitle: What am I curious about?
-bigimg: "img/research.jpg"
+bigimg: "img/research2.jpg"
 ---
 <link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
 
