@@ -25,9 +25,10 @@ In this work we provide an algorithm that intelligently activates *Adaptive Moti
 
 ## **[Motion Planning for an Autonomous Airship]()**
 
+
 <div class="centered-thing">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AkJvwEunmXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="760" height="430" src="https://www.youtube.com/embed/AkJvwEunmXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </div>
-</br>
+
 
