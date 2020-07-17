@@ -1,7 +1,7 @@
 .centered-thing {
     
     display: block;
-    width: auto;
+    width: fit-content;
     margin: 0 auto;
    
 }
