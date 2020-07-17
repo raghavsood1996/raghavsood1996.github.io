@@ -1,6 +1,7 @@
 .centered-thing {
     
-    width: 560px;
+    display: block;
+    width: auto;
     margin: 0 auto;
    
 }
