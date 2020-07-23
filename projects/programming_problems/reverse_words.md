@@ -10,10 +10,10 @@ tags: [Array, String, Leetcode]
 
 Given an input string, reverse the string word by word.
 
-    Example 1:
+Example 1:
 
-    Input: "the sky is blue"
-    Output: "blue is sky the"
+Input: "the sky is blue"
+Output: "blue is sky the"
 
 ```cpp
 class Solution {
