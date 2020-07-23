@@ -1318,3 +1318,9 @@ public:
 ## **[Linked Cycle List 2](Linked_List_cycle2.md)**
 
 ## **[LRU Cache](LRU_Cache.md)**
+
+## **[Rotate Image](rotate_img.md)**
+
+## **[Reverse Words in a String](reverse_words.md)**
+
+## **[Longest Palindromic Substring](longest_palindrome.md)**
