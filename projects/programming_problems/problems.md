@@ -1324,3 +1324,5 @@ public:
 ## **[Reverse Words in a String](reverse_words.md)**
 
 ## **[Longest Palindromic Substring](longest_palindrome.md)**
+
+## **[Course Schedule II](course_schedule2.md)**
