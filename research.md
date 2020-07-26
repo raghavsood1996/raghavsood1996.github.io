@@ -18,14 +18,14 @@ Most of my research work has been in the field of Search Based motion planning a
 
 <img src="iros2020/intro.png" alt="IROS" class="img-container"/>
 
-This work was recently accepted for [International Conference on Intelligent Robots and Systems (IROS)](https://www.iros2020.org/) 2020 which will be held on October 25, 2020. You can find the pre-print vesion of the paper [here](https://www.researchgate.net/publication/343215060_Learning_to_Use_Adaptive_Motion_Primitives_in_Search-Based_Planning_for_Navigation).
+This work was recently accepted for [International Conference on Intelligent Robots and Systems (IROS)](https://www.iros2020.org/) 2020 which will be held on October 25, 2020. You can find the pre-print version of the paper [here](https://www.researchgate.net/publication/343215060_Learning_to_Use_Adaptive_Motion_Primitives_in_Search-Based_Planning_for_Navigation).
 
 In this work we provide an algorithm that intelligently activates *Adaptive Motion Primitives* using Deep Learning for motion planning in navigation domain using Heuristic-based graph search algorithms like A* .Our experiments shows that our approach can lead to upto 2x speedup in planning times.
 
 
 ## **[Motion Planning for an Autonomous Airship]()**
 
-<br/>
+
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AkJvwEunmXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
