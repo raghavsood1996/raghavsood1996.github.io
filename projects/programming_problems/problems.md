@@ -1326,3 +1326,7 @@ public:
 ## **[Longest Palindromic Substring](longest_palindrome.md)**
 
 ## **[Course Schedule II](course_schedule2.md)**
+
+## **[Permutations](permutations.md)**
+
+## **[Coin Change 2](coin_change2.md)**
