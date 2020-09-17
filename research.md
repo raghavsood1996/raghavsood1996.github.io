@@ -4,7 +4,7 @@ title: Research
 subtitle: What am I curious about?
 bigimg: "img/research2.jpg"
 ---
-<link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/video.css" />
 
 My major interest lies in the field of Motion Planning and Control of autonomous bots. Some other fields of interest are Computer Vision and Deep Learning. <br/>
 
