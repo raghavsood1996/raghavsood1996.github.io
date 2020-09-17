@@ -7,7 +7,7 @@ gh-badge: [star, fork, follow]
 tags: [Motion Planning, Control]
 comments: true
 ---
-<link rel="stylesheet" type="text/css" media="all" href="../../css/video.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../../../css/video.css" />
 
 ## Self-Driving Vehicle Controller
 
