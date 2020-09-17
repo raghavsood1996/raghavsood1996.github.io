@@ -5,7 +5,7 @@ subtitle: What's taking all my time!
 bigimg: "img/snow.jpg"
 ---
 
-<link rel="stylesheet" type="text/css" media="all" href="css/video.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
 
 ## [Self-Driving Controller](projects/Carla_Controller/Controller.md)
 
