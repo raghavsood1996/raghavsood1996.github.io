@@ -5,12 +5,11 @@ subtitle: What's taking all my time!
 bigimg: "img/snow.jpg"
 ---
 
-<link rel="stylesheet" type="text/css" media="all" href="../css/video.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/video.css" />
 
 ## [Self-Driving Controller](projects/Carla_Controller/Controller.md)
 
-<img src="/projects/Carla_Controller/carla_sim.png" alt="Carla_Sim" class="img-container"/>
-
+<img src="projects/Carla_Controller/carla_sim.png" alt="Carla_Sim" class="img-container"/>
 
 ## [LeetCode Madness](projects/programming_problems/problems.md)
 
