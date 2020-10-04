@@ -58,163 +58,6 @@ public:
 * Binary Search Problem
 * Figure out what part of the array the middle element and target belong to and accordingly change start and end of the binary search.
 
-## **Checking if Graph is Bipartite**
-
-```c++
-class Solution {
-public:
-
-    bool isBipartite(vector<vector<int>>& graph) {
-
-        vector<int> stat(graph.size(),0); //maintain status of a node
-
-        for(int i =0 ;i <graph.size();i++){ // go through all the components of the graph
-
-            if(stat[i] == 1) continue;
-            int start = i;
-
-            vector<int> level(graph.size(),-1); //maintain bfs level of the expansions
-            level[start] = 0;
-            queue<int> bfs_q;
-            bfs_q.push(start);
-            stat[start] = -1;
-            int curr_level = 0;
-
-            while(!bfs_q.empty()) //bfs visit
-            {
-                int curr_node = bfs_q.front();
-                bfs_q.pop();
-
-                curr_level = level[curr_node] + 1;
-                for(int ngb: graph[curr_node])
-                {
-                    if(stat[ngb] == 1) continue;
-
-                    if(level[ngb] == level[curr_node]) //odd cycle
-                    {
-                        return 0;
-                    }
-
-                    bfs_q.push(ngb);
-                    stat[ngb] = -1;
-
-                    level[ngb] = curr_level;
-                }
-
-                stat[curr_node] = 1; //done processing current node
-            }
-        }
-        return 1;
-    }
-};
-```
-
-### **Notes**
-
-* Bipartite Graph is a graph in which we can seperate the nodes in two groups such that there are no edges between node of a group.
-* Usually asked for undirecte graphs.
-* Implented using **BFS** by keeping track of the level of nodes.
-* If the level a parent and a neighbour node is same then there is an odd cycle in the graph and the graph is not Bipartite.
-
-### **NOTES**
-
-* Formulate Problem as finding connected components of a graph.
-* Each connected component is an island.
-
-## **Diameter of a Binary Tree** <br/> [Leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
-
-Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
-
-```c++
-/**
-* Definition for a binary tree node.
-* struct TreeNode {
-*     int val;
-*     TreeNode *left;
-*     TreeNode *right;
-*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-* };
-*/
-class Solution {
-public:
-
-    int height_util(TreeNode* node, int& max_path){
-        if(node == NULL){
-            return 0;
-        }
-
-
-        int l_height = height_util(node->left,max_path); //height of left subtree
-        int r_height = height_util(node->right,max_path); // height of right subtree
-        int path_length = l_height + r_height + 1; //longest path will have the max sum of height of left and right subtree
-
-        if(path_length > max_path){
-            max_path = path_length;
-        }
-
-        return 1 + max(l_height,r_height);
-
-    }
-
-    int diameterOfBinaryTree(TreeNode* root) {
-
-        if(root == NULL){
-            return 0;
-        }
-        int max_path = -1;
-        auto ht = height_util(root, max_path);
-        return max_path - 1;
-    }
-};
-```
-
-## **Lowest Common Ancestor Binary Tree**<br/> [Leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-
-Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
-
-```c++
-/**
-* Definition for a binary tree node.
-* struct TreeNode {
-*     int val;
-*     TreeNode *left;
-*     TreeNode *right;
-*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-* };
-*/
-class Solution {
-public:
-    TreeNode* lca_util(TreeNode* node, TreeNode* p, TreeNode* q){
-
-        if(node == NULL){
-            return NULL;
-        }
-
-        if(node->val == p->val || node->val == q->val){ 
-            return node;
-        }
-
-        TreeNode* left_lca = lca_util(node->left,p,q);
-        TreeNode* right_lca = lca_util(node->right, p,q);
-        if(left_lca != NULL && right_lca != NULL){ // if found in both right and left subtrees then it is the lowest commmon ancestor
-            return node;
-        }
-
-
-        return left_lca != NULL ? left_lca : right_lca; // if only found in one then return the one where it was found
-    }
-
-    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-
-        return lca_util(root,p,q);
-    }
-};
-```
-
-### **NOTES**
-
-* Follow the bottom to up approach.
-
 ## **Validating a BST** <br/> [Leetcode](https://leetcode.com/problems/validate-binary-search-tree/submissions/)
 
 ```c++
@@ -640,9 +483,9 @@ class Solution {
 };
 ```
 
-    ## **Notes**
+## **Notes**
 
-    * Recursively from bottom to top check subtrees and make pointers NULL accordingly.
+* Recursively from bottom to top check subtrees and make pointers NULL accordingly.
 
 ## **Finding Duplicate Subtrees**<br/>[Leetcode](https://leetcode.com/problems/find-duplicate-subtrees/)
 
@@ -1040,3 +883,9 @@ public:
 ## **[Possible Bipartition](bipartition.md)**
 
 ## **[Number of Islands](num_islands.md)**
+
+## **[Iterative Traversal Binary Tree](post_order.md)**
+
+## **[Diameter of Binary Tree](diameter_binaryTree.md)**
+
+## **[Lowest Common Ancestor Binary Tree](lca_binaryTree.md)**
